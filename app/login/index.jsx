@@ -22,15 +22,14 @@ export default function LoginScreen() {
     const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
 
     const onPress = useCallback(async () => {
+        console.log("Button Pressed")
         try {
             const { createdSessionId, signIn, signUp, setActive } = await startOAuthFlow({
                 redirectUrl: Linking.createURL('/(tabs)/home', { scheme: 'myapp' }),
             });
 
             if (createdSessionId) {
-                // setActive({ session: createdSessionId });
-            } else {
-                // Use signIn or signUp for next steps such as MFA
+                await setActive({ session: createdSessionId });
             }
         } catch (err) {
             console.error("OAuth error", err);

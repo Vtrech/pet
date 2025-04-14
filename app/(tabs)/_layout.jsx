@@ -24,6 +24,13 @@ export default function TabLayout() {
                     tabBarIcon: ({ color }) => <Ionicons name="heart" size={24} color={color} />
                 }}
             />
+            <Tabs.Screen name='AI'
+                options={{
+                    title: 'AI',
+                    headerShown: false,
+                    tabBarIcon: ({ color }) => <Ionicons name="logo-octocat" size={24} color={color} />
+                }}
+            />
             <Tabs.Screen name='inbox'
                 options={{
                     title: 'Inbox',

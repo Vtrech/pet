@@ -33,7 +33,7 @@ export default function Inbox() {
             const otherUser = record.users.filter((user) => user?.email != user?.primaryEmailAddress?.emailAddress)
             const result = {
                 docId: record.id,
-                ...otherUser[0]
+                ...otherUser[1]
             }
             list.push(result)
         })

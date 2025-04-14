@@ -22,7 +22,6 @@ export default function ChatScreen() {
         _id: doc.id,
         ...doc.data()
       }))
-      // Sort and insert date separators
       const sorted = messageData.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
       const withSeparators = insertDateSeparators(sorted)
       setMessages(withSeparators)
@@ -37,7 +36,7 @@ export default function ChatScreen() {
     const result = docSnap.data()
     const otherUser = result?.users.filter(item => item.email !== user?.primaryEmailAddress?.emailAddress)
     navigation.setOptions({
-      headerTitle: otherUser?.[0]?.name || 'Chat'
+      headerTitle: otherUser?.[0]?.name
     })
   }
 

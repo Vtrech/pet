@@ -27,7 +27,6 @@ export default function index() {
     GetCategories();
   }, [])
 
-  // Use to Get Category List from DB
 
   const GetCategories = async () => {
     setCategoryList([]);
@@ -37,12 +36,10 @@ export default function index() {
     })
   }
 
-  // Use to Get Image from Gallery
 
   const imagePiker = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ['images'],
-      // mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
@@ -70,7 +67,6 @@ export default function index() {
     UploadImage()
   }
 
-  // Use to Upload Image to Firebase Storage
 
   const UploadImage = async () => {
     setLoader(true)

@@ -41,15 +41,15 @@ export default function Profile() {
     const { user } = useUser()
     const router = useRouter()
     const { signOut } = useAuth()
-    const onPressMenu = (menu) => {
-        if (menu == 'logout') {
-            signOut()
+    const onPressMenu = (item) => {
+        if (item.name === 'Logout') {
+            signOut();
+            router.replace('/login'); // Chuyển hướng về màn hình đăng nhập
             return;
         }
 
-        router.push(menu.path)
-
-    }
+        router.push(item.path);
+    };
     return (
         <View style={{
             padding: 20,

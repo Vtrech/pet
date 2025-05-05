@@ -1,50 +1,56 @@
-# Welcome to your Expo app 👋
+# BÁO CÁO: ỨNG DỤNG NHẬN NUÔI THÚ CƯNG
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## 1. Giới thiệu
+Hiện nay, nhu cầu nhận nuôi thú cưng đang ngày càng tăng cao, đặc biệt trong giới trẻ và những người yêu động vật. Tuy nhiên, quá trình tìm kiếm, lựa chọn và tiếp cận nguồn thú cưng cần nhận nuôi vẫn còn gặp nhiều khó khăn, thiếu thông tin, và chưa có nền tảng kết nối hiệu quả. Ứng dụng **“PetAdopt”** được xây dựng nhằm giải quyết bài toán trên bằng cách kết nối những người cần cho – nhận thú cưng trên nền tảng di động.
 
-## Get started
+## 2. Mục tiêu của ứng dụng
+- Hỗ trợ người dùng dễ dàng tìm kiếm, đăng ký nhận nuôi thú cưng.
+- Tạo môi trường kết nối giữa những người cho – nhận thú cưng một cách minh bạch, tiện lợi.
+- Cung cấp thông tin chăm sóc, tư vấn y tế.
 
-1. Install dependencies
+## 3. Tính năng chính
 
-   ```bash
-   npm install
-   ```
+### 3.1. Đăng nhập/Đăng ký tài khoản
+- Hỗ trợ xác thực qua email, Google, hoặc mạng xã hội.
+- Lưu thông tin người dùng, vai trò (người cho, người nhận).
 
-2. Start the app
+### 3.2. Đăng tin cho thú cưng cần nhận nuôi
+- Cho phép người dùng đăng tải thông tin thú cưng: hình ảnh, mô tả, yêu cầu nhận nuôi.
+- Hệ thống duyệt tin để đảm bảo chất lượng nội dung.
 
-   ```bash
-    npx expo start
-   ```
+### 3.3. Liên hệ và nhắn tin
+- Tính năng chat giữa người nhận và người cho thú cưng.
 
-In the output, you'll find options to open the app in a
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 3.4. Tư vấn chăm sóc
+- Cung cấp kiến thức chăm sóc, huấn luyện thú cưng.
+- - Tích hợp hỗ trợ phản hồi tự động từ chatbot với vai trò **"Bác sĩ thú y"** để giải đáp thắc mắc.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 4. Công nghệ sử dụng
+- **Frontend:** React Native (JavaScript)
+- **Backend:** Firebase (Firestore, Storage), Clerk (Authentication)
+- **AI Chatbot:** Tích hợp API GPT hoặc Gemini
+- **Push Notifications:** Expo Push hoặc Firebase Cloud Messaging
 
-## Get a fresh project
+## 5. Giao diện người dùng
+- Giao diện thân thiện, dễ sử dụng với màu sắc tươi sáng, hình ảnh dễ thương.
+- Thiết kế tối ưu cho thiết bị di động.
 
-When you're ready, run:
+## 6. Đánh giá và hướng phát triển
 
-```bash
-npm run reset-project
-```
+### Ưu điểm:
+- Giao diện đẹp, dễ sử dụng.
+- Kết nối cộng đồng yêu thú cưng nhanh chóng.
+- Có tích hợp AI để hỗ trợ người dùng trong việc chăm sóc thú cưng.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Hạn chế:
+- Cần xác minh người dùng kỹ hơn để tránh tình trạng lừa đảo.
+- Cần phát triển thêm hệ thống đánh giá, phản hồi sau nhận nuôi.
 
-## Learn more
+### Hướng phát triển:
+- Thêm tính năng định vị thú cưng bị lạc.
+- Tích hợp hệ thống tiêm chủng và hồ sơ y tế điện tử.
+- Hợp tác với các trạm cứu hộ và phòng khám thú y.
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 7. Kết luận
+Ứng dụng **“PetAdopt”** không chỉ là cầu nối giữa người cho và người nhận nuôi thú cưng mà còn góp phần lan tỏa thông điệp nhân văn, khuyến khích yêu thương động vật và nâng cao ý thức chăm sóc thú cưng trong cộng đồng. Đây là một bước tiến mới trong việc áp dụng công nghệ để phục vụ mục tiêu xã hội.

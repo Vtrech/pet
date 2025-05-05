@@ -1,53 +1,52 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import React from 'react'
-import Header from '../../components/Home/Header'
-import Slider from '../../components/Home/Slider'
-import PetListByCategory from '../../components/Home/PetListByCategory'
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import React from 'react';
+import Header from '../../components/Home/Header';
+import Slider from '../../components/Home/Slider';
+import PetListByCategory from '../../components/Home/PetListByCategory';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import { Link } from 'expo-router'
+import { Link } from 'expo-router';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Home() {
     return (
-        <View style={{
-            padding: 20, marginTop: 20
-        }}>
-
-
+        <View style={styles.container}>
             <Header />
-
             <Slider />
 
             <PetListByCategory />
 
-            <Link href={'/add-new-pet'}
-            style={styles.addNewPetContainer}>
-            
-                <MaterialIcons name="pets" size={24} color="orange" />
-                <Text style={{
-                    fontFamily: 'outfit-medium',
-                    color: 'orange',
-                    fontSize: 18
-                }}>Add New Pet</Text>
+            <Link href={'/add-new-pet'} asChild>
+                <TouchableOpacity activeOpacity={0.9} style={styles.fab}>
+                    <LinearGradient colors={['#FF8C38', '#FFAB76']} style={styles.fabGradient}>
+                        <MaterialIcons name="pets" size={28} color="white" />
+                    </LinearGradient>
+                </TouchableOpacity>
             </Link>
-
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
-    addNewPetContainer: {
-        display: 'flex',
-        flexDirection: 'row',
-        gap: 10,
+    container: {
+        flex: 1,
+        backgroundColor: '#F8F6F4',
+        paddingHorizontal: 16,
+    },
+    fab: {
+        position: 'absolute',
+        bottom: 32,
+        right: 16,
+        borderRadius: 30,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 6,
+        elevation: 8,
+    },
+    fabGradient: {
+        padding: 16,
+        borderRadius: 30,
         alignItems: 'center',
-        padding: 20,
-        marginTop: 20,
-        textAlign:'center',
-        backgroundColor: '#fff9c9',
-        borderWidth: 1,
-        borderColor: 'orange',
-        borderRadius: 15,
-        borderStyle: 'dashed',
-        justifyContent: 'center'
-    }
-})
+        justifyContent: 'center',
+    },
+});

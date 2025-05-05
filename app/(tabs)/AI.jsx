@@ -1,39 +1,31 @@
 import React, { useEffect, useState, useRef } from 'react';
-import {
-    View,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    FlatList,
-    StyleSheet,
-    Image,
-} from 'react-native';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
-import { addDoc, collection, onSnapshot, query, orderBy } from 'firebase/firestore';
-import { db } from '../../config/FirebaseConfig'; // Điều chỉnh đường dẫn
+import { collection, addDoc, onSnapshot, query, orderBy } from 'firebase/firestore';
+import { db } from '../../config/FirebaseConfig';
 import { useUser } from '@clerk/clerk-expo';
+import { View, StyleSheet } from 'react-native';
 import moment from 'moment';
+import { GEMINI_API_KEY } from '@env';
+import MessageList from '../../components/Message/MessageList';
+import ChatInput from '../../components/Message/ChatInput';
 
 export default function ChatScreen() {
     const params = useLocalSearchParams();
     const navigation = useNavigation();
     const { user } = useUser();
     const [messages, setMessages] = useState([]);
-    const [inputText, setInputText] = useState('');
     const flatListRef = useRef(null);
+    const [inputText, setInputText] = useState('');
 
-    const GEMINI_API_KEY = 'AIzaSyDAPOBmI_b7vM3cYrCeuAm2pK4AHTLy5rw'; // Thay bằng API key từ Google Cloud
     const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
     useEffect(() => {
-        // Đặt tiêu đề header là "Bác sĩ thú y"
         navigation.setOptions({
             headerTitle: 'Bác sĩ thú y',
         });
 
         if (!user) return;
 
-        // Tải tin nhắn từ Firestore theo userId
         const userId = user.id;
         const messagesRef = collection(db, 'chatMessages', userId, 'messages');
         const q = query(messagesRef, orderBy('createdAt', 'asc'));
@@ -60,7 +52,6 @@ export default function ChatScreen() {
 
         const userId = user.id;
 
-        // Thêm tin nhắn người dùng vào Firestore
         const newMessage = {
             _id: Date.now().toString(),
             text: inputText,
@@ -81,7 +72,6 @@ export default function ChatScreen() {
 
         setInputText('');
 
-        // Gọi API Gemini để chatbot trả lời
         try {
             const response = await fetch(GEMINI_API_URL, {
                 method: 'POST',
@@ -122,7 +112,6 @@ export default function ChatScreen() {
             const data = await response.json();
             const botMessageText = data.candidates[0]?.content?.parts[0]?.text || 'Không có phản hồi từ API.';
 
-            // Lưu tin nhắn bot vào Firestore
             const botMessage = {
                 _id: (Date.now() + 1).toString(),
                 text: botMessageText,
@@ -130,7 +119,7 @@ export default function ChatScreen() {
                 user: {
                     _id: 'chatbot',
                     name: 'Bác sĩ thú y',
-                    avatar: null, // Không cần avatar cho chatbot
+                    avatar: null,
                 },
             };
 
@@ -169,63 +158,18 @@ export default function ChatScreen() {
         return result;
     };
 
-    const renderItem = ({ item, index }) => {
-        if (item.type === 'separator') {
-            return (
-                <View style={styles.separator}>
-                    <Text style={styles.separatorText}>{moment(item.date).format('MMM D, YYYY')}</Text>
-                </View>
-            );
-        }
-
-        const isMyMessage = item.user?._id === user?.primaryEmailAddress?.emailAddress;
-        const showAvatar =
-            index === messages.length - 1 ||
-            (messages[index + 1]?.user?._id !== item.user?._id &&
-                messages[index + 1]?.type !== 'separator');
-
-        return (
-            <View style={[styles.messageWrapper, isMyMessage ? styles.myWrapper : styles.theirWrapper]}>
-                <View style={[styles.messageBubble, isMyMessage ? styles.myMessage : styles.theirMessage]}>
-                    <Text style={[styles.messageText, !isMyMessage && { color: '#000' }]}>{item.text}</Text>
-                    <Text style={styles.timeText}>{moment(item.createdAt).format('h:mm A')}</Text>
-                </View>
-                {showAvatar && isMyMessage && (
-                    <Image source={{ uri: item.user.avatar }} style={styles.avatar} />
-                )}
-            </View>
-        );
-    };
-
-    if (!user) {
-        return (
-            <View style={styles.container}>
-                <Text>Đang tải thông tin người dùng...</Text>
-            </View>
-        );
-    }
-
     return (
         <View style={styles.container}>
-            <FlatList
-                ref={flatListRef}
-                data={messages}
-                keyExtractor={(item) => item._id}
-                renderItem={renderItem}
-                contentContainerStyle={{ paddingVertical: 10 }}
-                onContentSizeChange={() => flatListRef.current?.scrollToEnd({ animated: true })}
+            <MessageList
+                messages={messages}
+                user={user}
+                flatListRef={flatListRef}
             />
-            <View style={styles.inputContainer}>
-                <TextInput
-                    style={styles.textInput}
-                    placeholder="Hỏi bác sĩ thú y..."
-                    value={inputText}
-                    onChangeText={setInputText}
-                />
-                <TouchableOpacity onPress={onSend} style={styles.sendButton}>
-                    <Text style={{ color: 'white' }}>Gửi</Text>
-                </TouchableOpacity>
-            </View>
+            <ChatInput
+                inputText={inputText}
+                setInputText={setInputText}
+                onSend={onSend}
+            />
         </View>
     );
 }
@@ -234,81 +178,5 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#f4f4f4',
-    },
-    inputContainer: {
-        flexDirection: 'row',
-        padding: 10,
-        borderTopWidth: 1,
-        borderColor: '#ddd',
-        backgroundColor: '#fff',
-    },
-    textInput: {
-        flex: 1,
-        height: 40,
-        borderWidth: 1,
-        borderColor: '#ccc',
-        borderRadius: 20,
-        paddingHorizontal: 15,
-        backgroundColor: '#fff',
-    },
-    sendButton: {
-        marginLeft: 10,
-        backgroundColor: '#007AFF',
-        borderRadius: 20,
-        paddingHorizontal: 15,
-        justifyContent: 'center',
-    },
-    messageWrapper: {
-        flexDirection: 'row',
-        alignItems: 'flex-end',
-        marginVertical: 4,
-        paddingHorizontal: 10,
-    },
-    myWrapper: {
-        justifyContent: 'flex-end',
-    },
-    theirWrapper: {
-        justifyContent: 'flex-start',
-    },
-    messageBubble: {
-        padding: 10,
-        borderRadius: 15,
-        maxWidth: '70%',
-    },
-    myMessage: {
-        backgroundColor: '#007AFF',
-        borderBottomRightRadius: 0,
-    },
-    theirMessage: {
-        backgroundColor: '#E5E5EA',
-        borderBottomLeftRadius: 0,
-    },
-    messageText: {
-        color: '#fff',
-        fontSize: 16,
-    },
-    timeText: {
-        color: '#f0f0f0',
-        fontSize: 11,
-        marginTop: 4,
-        textAlign: 'right',
-    },
-    avatar: {
-        width: 24,
-        height: 24,
-        borderRadius: 12,
-        marginLeft: 5,
-    },
-    separator: {
-        alignItems: 'center',
-        marginVertical: 10,
-    },
-    separatorText: {
-        color: '#999',
-        fontSize: 12,
-        backgroundColor: '#e1e1e1',
-        paddingHorizontal: 10,
-        paddingVertical: 3,
-        borderRadius: 10,
     },
 });

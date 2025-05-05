@@ -44,7 +44,7 @@ export default function Profile() {
     const onPressMenu = (item) => {
         if (item.name === 'Logout') {
             signOut();
-            router.replace('/login'); // Chuyển hướng về màn hình đăng nhập
+            router.replace('/login');
             return;
         }
 

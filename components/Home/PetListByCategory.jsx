@@ -13,10 +13,6 @@ export default function PetListByCategory() {
         GetPetList('Dogs')
     }, [])
 
-    /**
-     * Used to Get Pet List on Category Selection
-     * @param {*} category 
-     */
 
 
     const GetPetList = async (category) => {

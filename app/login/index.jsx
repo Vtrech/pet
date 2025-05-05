@@ -54,16 +54,10 @@ export default function LoginScreen() {
                 alignItems: 'center'
             }}>
                 <Text style={{
-                    fontFamily: 'outfit-bold',
+
                     fontSize: 30,
                     textAlign: 'center'
-                }}>Ready to make a new friend?</Text>
-                <Text style={{
-                    fontFamily: 'outfit',
-                    fontSize: 18,
-                    textAlign: 'center',
-                    color: 'gray'
-                }}>Let's adopt the pet which you like and make there life happy again</Text>
+                }}>Bạn đã sẵn sàng gặp một người bạn mới chưa?</Text>
 
                 <Pressable
                     onPress={onPress}
@@ -78,7 +72,7 @@ export default function LoginScreen() {
                         fontFamily: 'outfit-medium',
                         fontSize: 20,
                         textAlign: 'center'
-                    }}>Get Started</Text>
+                    }}>Bắt đầu nào</Text>
                 </Pressable>
             </View>
         </View>

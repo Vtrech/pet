@@ -15,8 +15,7 @@ Hiện nay, nhu cầu nhận nuôi thú cưng đang ngày càng tăng cao, đặ
 - Lưu thông tin người dùng, vai trò (người cho, người nhận).
 
 ### 3.2. Đăng tin cho thú cưng cần nhận nuôi
-- Cho phép người dùng đăng tải thông tin thú cưng: hình ảnh, mô tả, yêu cầu nhận nuôi.
-- Hệ thống duyệt tin để đảm bảo chất lượng nội dung.
+- Cho phép người dùng đăng tải thông tin thú cưng: hình ảnh, mô tả, thông tin về vật nuôi.
 
 ### 3.3. Liên hệ và nhắn tin
 - Tính năng chat giữa người nhận và người cho thú cưng.
@@ -29,12 +28,54 @@ Hiện nay, nhu cầu nhận nuôi thú cưng đang ngày càng tăng cao, đặ
 ## 4. Công nghệ sử dụng
 - **Frontend:** React Native (JavaScript)
 - **Backend:** Firebase (Firestore, Storage), Clerk (Authentication)
-- **AI Chatbot:** Tích hợp API GPT hoặc Gemini
-- **Push Notifications:** Expo Push hoặc Firebase Cloud Messaging
+- **Expo Go**
 
 ## 5. Giao diện người dùng
 - Giao diện thân thiện, dễ sử dụng với màu sắc tươi sáng, hình ảnh dễ thương.
 - Thiết kế tối ưu cho thiết bị di động.
+
+### Đăng nhập
+
+<img src="assets/UI/Start.png"  style="width:200px; display:inline-block; margin-right:10px;">
+<img src="assets/UI/SignIn.png" style="width:200px; display:inline-block;">
+
+- Bạn có thể chọn tài khoản Google ngay trên thiết bị của bạn:
+<img src="assets/UI/Login.png"  style="width:200px; display:inline-block; margin-right:10px;">
+
+### Tabs (Home, Favorite, AI, Inbox, Profile)
+<figure style="display:inline-block; text-align:center; margin-right:20px;">
+  <img src="assets/UI/Home.png" style="width:200px;">
+  <figcaption>Home</figcaption>
+</figure>
+<figure style="display:inline-block; text-align:center; margin-right:20px;">
+  <img src="assets/UI/Favorites.png"  style="width:200px;">
+  <figcaption>Favorite</figcaption>
+</figure>
+<figure style="display:inline-block; text-align:center; margin-right:20px;">
+  <img src="assets/UI/ChatAI.png"  style="width:200px;">
+  <figcaption>AI</figcaption>
+</figure>
+<figure style="display:inline-block; text-align:center; margin-right:20px;">
+  <img src="assets/UI/Inbox.png"  style="width:200px;">
+  <figcaption>Inbox</figcaption>
+</figure>
+<figure style="display:inline-block; text-align:center; margin-right:20px;">
+  <img src="assets/UI/Profile.png"  style="width:200px;">
+  <figcaption>Profile</figcaption>
+</figure>
+
+### Thông tin chi tiết về thú cưng
+
+<img src="assets/UI/PetDetails.png" alt="Mèo" style="width:200px; display:inline-block;">
+
+### Thêm thú cưng
+
+<img src="assets/UI/AddNewPet1.png" alt="Mèo" style="width:200px; display:inline-block;">
+<img src="assets/UI/AddNewPet2.png" alt="Mèo" style="width:200px; display:inline-block;">
+
+### Quản lý bài đăng
+<img src="assets/UI/UserPost.png" alt="Mèo" style="width:200px; display:inline-block;">
+
 
 ## 6. Đánh giá và hướng phát triển
 
@@ -54,3 +95,7 @@ Hiện nay, nhu cầu nhận nuôi thú cưng đang ngày càng tăng cao, đặ
 
 ## 7. Kết luận
 Ứng dụng **“PetAdopt”** không chỉ là cầu nối giữa người cho và người nhận nuôi thú cưng mà còn góp phần lan tỏa thông điệp nhân văn, khuyến khích yêu thương động vật và nâng cao ý thức chăm sóc thú cưng trong cộng đồng. Đây là một bước tiến mới trong việc áp dụng công nghệ để phục vụ mục tiêu xã hội.
+
+---------------------------
+
+# Test case

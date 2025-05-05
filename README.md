@@ -36,45 +36,45 @@ Hiện nay, nhu cầu nhận nuôi thú cưng đang ngày càng tăng cao, đặ
 
 ### Đăng nhập
 
-<img src="assets/UI/Start.png"  style="width:200px; display:inline-block; margin-right:10px;">
-<img src="assets/UI/SignIn.png" style="width:200px; display:inline-block;">
+| ![](assets/UI/Start.png) | ![](assets/UI/SignIn.png) |
+|:--:|:--:|
+| Màn hình bắt đầu | Đăng nhập tài khoản |
 
-- Bạn có thể chọn tài khoản Google ngay trên thiết bị của bạn:
-<img src="assets/UI/Login.png"  style="width:200px; display:inline-block; margin-right:10px;">
+**Bạn có thể chọn tài khoản Google ngay trên thiết bị của bạn:**
+
+![](assets/UI/Login.png)
+
+---
 
 ### Tabs (Home, Favorite, AI, Inbox, Profile)
-<figure style="display:inline-block; text-align:center; margin-right:20px;">
-  <img src="assets/UI/Home.png" style="width:200px;">
-  <figcaption>Home</figcaption>
-</figure>
-<figure style="display:inline-block; text-align:center; margin-right:20px;">
-  <img src="assets/UI/Favorites.png"  style="width:200px;">
-  <figcaption>Favorite</figcaption>
-</figure>
-<figure style="display:inline-block; text-align:center; margin-right:20px;">
-  <img src="assets/UI/ChatAI.png"  style="width:200px;">
-  <figcaption>AI</figcaption>
-</figure>
-<figure style="display:inline-block; text-align:center; margin-right:20px;">
-  <img src="assets/UI/Inbox.png"  style="width:200px;">
-  <figcaption>Inbox</figcaption>
-</figure>
-<figure style="display:inline-block; text-align:center; margin-right:20px;">
-  <img src="assets/UI/Profile.png"  style="width:200px;">
-  <figcaption>Profile</figcaption>
-</figure>
+
+| ![](assets/UI/Home.png) | ![](assets/UI/Favorites.png) | ![](assets/UI/ChatAI.png) |
+|:--:|:--:|:--:|
+| Home | Favorite | AI |
+
+| ![](assets/UI/Inbox.png) | ![](assets/UI/Profile.png) |
+|:--:|:--:|
+| Inbox | Profile |
+
+---
 
 ### Thông tin chi tiết về thú cưng
 
-<img src="assets/UI/PetDetails.png" alt="Mèo" style="width:200px; display:inline-block;">
+![](assets/UI/PetDetails.png)
+
+---
 
 ### Thêm thú cưng
 
-<img src="assets/UI/AddNewPet1.png" alt="Mèo" style="width:200px; display:inline-block;">
-<img src="assets/UI/AddNewPet2.png" alt="Mèo" style="width:200px; display:inline-block;">
+| ![](assets/UI/AddNewPet1.png) | ![](assets/UI/AddNewPet2.png) |
+|:--:|:--:|
+| Thêm thú cưng - Bước 1 | Thêm thú cưng - Bước 2 |
+
+---
 
 ### Quản lý bài đăng
-<img src="assets/UI/UserPost.png" alt="Mèo" style="width:200px; display:inline-block;">
+
+![](assets/UI/UserPost.png)
 
 
 ## 6. Đánh giá và hướng phát triển

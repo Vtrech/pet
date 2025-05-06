@@ -99,3 +99,84 @@ Hiện nay, nhu cầu nhận nuôi thú cưng đang ngày càng tăng cao, đặ
 ---------------------------
 
 # Test case
+
+### Test Case 1: Đăng Nhập 
+| **Thành phần**          | **Chi tiết**                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| **Test Case ID**        | TC_LoginGoogle_001                                                          |
+| **Tên Test Case**       | Kiểm tra đăng nhập với Google                                              |
+| **Mô tả**               | Kiểm tra xem người dùng có thể đăng nhập thành công bằng tài khoản Google không. |
+| **Điều kiện tiên quyết** | - Ứng dụng đã được cài đặt và mở trên thiết bị.<br>- Người dùng chưa đăng nhập.<br>- Tài khoản Google đã được liên kết với ứng dụng trước đó hoặc có thể đăng nhập. |
+| **Dữ liệu đầu vào**     | - Không có dữ liệu đầu vào cụ thể, sử dụng tài khoản Google.               |
+| **Các bước thực hiện**   | 1. Mở ứng dụng.<br>2. Nhấn vào nút "Bắt đầu nào", ứng dụng chuyển sang phần đăng nhập với tài khoản Google .<br>3. Chọn tài khoản Google để đăng nhập, có thể thêm tài khoản vào thiết bị.<br>4. Nhập mật khẩu Google nếu được yêu cầu. |
+| **Kết quả mong đợi**     | - Hệ thống chuyển hướng đến màn hình chính (Home).<br>- Người dùng có thể truy cập các chức năng khác của ứng dụng. |
+| **Kết quả thực tế**      | - Hiển thị màn hình Home với đầy đủ chức năng                                                  |
+| **Trạng thái**          | Pass                                                               |
+
+### Test Case 2: Điều Hướng Giữa Các Tab Chính
+| **Thành phần**          | **Chi tiết**                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| **Test Case ID**        | TC_Navigation_001                                                           |
+| **Tên Test Case**       | Kiểm tra điều hướng giữa các tab chính                                     |
+| **Mô tả**               | Kiểm tra xem người dùng có thể chuyển đổi giữa các tab chính (Home, Favorites, AI, Inbox, Profile) một cách mượt mà không. |
+| **Điều kiện tiên quyết** | - Người dùng đã đăng nhập thành công.<br>- Ứng dụng đang ở màn hình chính (Home). |
+| **Dữ liệu đầu vào**     | - Không có dữ liệu đầu vào cụ thể.                                         |
+| **Các bước thực hiện**   | 1. Xác nhận rằng đang ở tab Home.<br>2. Nhấn vào tab Favorites.<br>3. Xác nhận rằng đã chuyển sang tab Favorites.<br>4. Nhấn vào tab AI.<br>5. Xác nhận rằng đã chuyển sang tab AI.<br>6. Nhấn vào tab Inbox.<br>7. Xác nhận rằng đã chuyển sang tab Inbox.<br>8. Nhấn vào tab Profile.<br>9. Xác nhận rằng đã chuyển sang tab Profile.<br>10. Nhấn vào tab Home.<br>11. Xác nhận rằng đã chuyển lại sang tab Home. |
+| **Kết quả mong đợi**     | - Mỗi lần nhấn vào tab, ứng dụng chuyển sang tab tương ứng mà không có lỗi.<br>- Giao diện của từng tab được hiển thị đúng. |
+| **Kết quả thực tế**      | - Chuyển đổi giữa các tab mượt mà, animation khi chuyển tab                                                   |
+| **Trạng thái**          | Pass                                                                 |
+
+### Test Case 3: Xem Thông Tin Chi Tiết Thú Cưng
+| **Thành phần**          | **Chi tiết**                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| **Test Case ID**        | TC_PetDetails_001                                                           |
+| **Tên Test Case**       | Kiểm tra xem thông tin chi tiết thú cưng                                    |
+| **Mô tả**               | Kiểm tra xem người dùng có thể xem thông tin chi tiết của một thú cưng đã có trong hệ thống không. |
+| **Điều kiện tiên quyết** | - Người dùng đã đăng nhập thành công.<br>- Có ít nhất một thú cưng đã được thêm vào. |
+| **Dữ liệu đầu vào**     | - Không có dữ liệu đầu vào cụ thể.                                              |
+| **Các bước thực hiện**   | 1. Đi đến tab Home hoặc My Post (trong tab Profile).<br>2. Nhấn vào thú cưng bất kỳ.<br>3. Xem thông tin chi tiết của thú cưng. |
+| **Kết quả mong đợi**     | - Màn hình Pet Details được hiển thị với thông tin của thú cưng bao gồm tên, loài, tuổi, giới tính, ảnh, và các thông tin khác liên quan. |
+| **Kết quả thực tế**      | Hiển thị đầy đủ thông tin của thú cưng.                                                    |
+| **Trạng thái**          | Pass                                                                 |
+
+### Test Case 4: Thêm Thú Cưng Mới 
+| **Thành phần**          | **Chi tiết**                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| **Test Case ID**        | TC_AddNewPet                                                           |
+| **Tên Test Case**       | Kiểm tra thêm thú cưng mới                                        |
+| **Mô tả**               | Kiểm tra xem người dùng có thể bắt đầu quá trình thêm thú cưng mới và nhập thông tin cơ bản không. |
+| **Điều kiện tiên quyết** | - Người dùng đã đăng nhập thành công. |
+| **Dữ liệu đầu vào**     | - Picture. <br>- Pet name: Luna <br>- Pet Category: Cat <br>- Breed: abc <br>- Age: 2<br>- Gender: Male <br>-Weight: 2 <br>-Address: Hanoi <br>-About: Very well   |
+| **Các bước thực hiện**   | 1. Nhấn vào nút biểu tượng thêm thú cưng hoặc "Add New Pet" (trong tab Profile).<br>2. Trên màn hình Add New Pet , nhập thông tin vào các trường.<br>3. Nhấn "Submit". |
+| **Kết quả mong đợi**     | - Nếu nhập thiếu thông tin, yêu cầu nhập đầy đủ.<br>- Hệ thống lưu thông tin thú cưng mới.<br>- Chuyển hướng về màn hình Home, với thú cưng mới được hiển thị và xuất hiện trong "My Post".<br> |
+| **Kết quả thực tế**      | Thông tin về thú cưng được hiển thị đầy đủ và đúng theo dữ liệu đầu vào.                                                    |
+| **Trạng thái**          | Pass                                                                 |
+
+### Test Case 5: Quản Lý Bài Đăng
+| **Thành phần**          | **Chi tiết**                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| **Test Case ID**        | TC_ManagePosts_001                                                          |
+| **Tên Test Case**       | Kiểm tra quản lý bài đăng                                                  |
+| **Mô tả**               | Kiểm tra xem người dùng có thể xem hoặc xóa bài đăng của mình không. |
+| **Điều kiện tiên quyết** | - Người dùng đã đăng nhập thành công.<br>- Người dùng đã có ít nhất một bài đăng trong hệ thống. |
+| **Dữ liệu đầu vào**     | -  Thú cưng đã được người dùng thêm vào                                            |
+| **Các bước thực hiện**   | 1. Đi đến tab Profile vào mục My Post.<br>2. Tìm và nhấn vào bài đăng bất kỳ.<br>3. Nhấn vào xem chi tiết bài đăng.<br>4. Nhấn vào nút "Xóa" .<br>5. Xác nhận xóa bài đăng.<br>6. Xác nhận rằng bài đăng đã bị xóa khỏi danh sách. |
+| **Kết quả mong đợi**     | - Người dùng có thể xem chi tiết bài đăng.<br>- Người dùng có thể xóa bài đăng thành công.<br>- Sau khi xóa, bài đăng không còn hiển thị trong danh sách. |
+| **Kết quả thực tế**      | -My Post hiển thị đầy đủ bài đăng của người dùng.<br>- Khi xóa và xác nhận xóa, bài đăng xóa khỏi danh sách.                                                    |
+| **Trạng thái**          | Pass                                                                 |
+
+### Test Case 6: Thêm thú cưng vào Favorite
+| **Thành phần**          | **Chi tiết**                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| **Test Case ID**        | TC_Favorites                                                          |
+| **Tên Test Case**       | Kiểm tra xem khi thêm thú cưng vào mục yêu thích đăng                                                  |
+| **Mô tả**               | Kiểm tra xem người dùng có thể nhấn vào biểu tượng thêm vào danh sách Favorite hay không. |
+| **Điều kiện tiên quyết** | - Người dùng đã đăng nhập thành công.<br>- Đã có ít nhất một bài đăng trong hệ thống. |
+| **Dữ liệu đầu vào**     | -  Thú cưng đã được người dùng thêm vào favorite                                           |
+| **Các bước thực hiện**   | 1. Đi đến tab Home.<br>2. Tìm và nhấn vào bài đăng bất kỳ.<br>3. Nhấn vào biểu tượng hình trái tim.<br>4. Đi đến tab Favorite để xem các thú cung đã được thêm vào . |
+| **Kết quả mong đợi**     | - Người dùng nhấn vào biểu tượng hình trái tim sẽ chuyển sang màu đỏ.<br>- tab Favorite hiển thị đầy đủ những thú cưng đã được thêm.|
+| **Kết quả thực tế**      | - Biểu tượng chuyển sang màu đỏ. <br>- Danh sách đầy đủ của các thú cưng đã được yêu thích trong tab Favorite.                                                    |
+| **Trạng thái**          | Pass                                                                 |
+
+
+

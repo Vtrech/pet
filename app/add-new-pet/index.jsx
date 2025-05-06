@@ -135,7 +135,7 @@ export default function index() {
       </View>
 
       <View style={styles.inputContainer}>
-        <Text style={styles.label}>Pet Catagory *</Text>
+        <Text style={styles.label}>Pet Category *</Text>
         <Picker
           selectedValue={selectedCategory}
           style={styles.input}

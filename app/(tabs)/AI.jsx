@@ -91,12 +91,12 @@ export default function ChatScreen() {
                     systemInstruction: {
                         parts: [
                             {
-                                text: 'Bạn là một bác sĩ thú y chuyên nghiệp, hãy trả lời bằng tiếng Việt một cách chi tiết, dễ hiểu và hữu ích. Cung cấp lời khuyên về chăm sóc sức khỏe động vật, chẩn đoán sơ bộ các triệu chứng (nếu có), và khuyến nghị cách xử lý. Nếu tình trạng nghiêm trọng, hãy khuyên người dùng đưa thú cưng đến bác sĩ thú y ngay lập tức. Đừng đưa ra chẩn đoán chính thức hoặc kê đơn thuốc, vì bạn không phải bác sĩ thú y thực sự.',
+                                text: 'Bạn là một bác sĩ thú y chuyên nghiệp, hãy trả lời bằng tiếng Việt ngắn gọn, dễ hiểu và hữu ích. Cung cấp lời khuyên về chăm sóc sức khỏe động vật, chẩn đoán sơ bộ các triệu chứng (nếu có), và khuyến nghị cách xử lý. Nếu tình trạng nghiêm trọng, hãy khuyên người dùng đưa thú cưng đến bác sĩ thú y ngay lập tức. Đừng đưa ra chẩn đoán chính thức hoặc kê đơn thuốc, vì bạn không phải bác sĩ thú y thực sự.',
                             },
                         ],
                     },
                     generationConfig: {
-                        maxOutputTokens: 150,
+                        maxOutputTokens: 400,
                         temperature: 0.7,
                     },
                 }),

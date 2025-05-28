@@ -68,7 +68,7 @@ Hiện nay, nhu cầu nhận nuôi thú cưng đang ngày càng tăng cao, đặ
 
 | ![](assets/UI/AddNewPet1.png) | ![](assets/UI/AddNewPet2.png) |
 |:--:|:--:|
-| Thêm thú cưng - Bước 1 | Thêm thú cưng - Bước 2 |
+| 1 |  2 |
 
 ---
 

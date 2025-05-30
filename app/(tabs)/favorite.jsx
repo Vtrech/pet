@@ -16,7 +16,6 @@ export default function Favorite() {
         user && GetFavPetIds();
     }, [user]);
 
-    //Favorite Ids
     const GetFavPetIds = async () => {
         setLoader(true);
         const result = await Share.GetFavList(user);
@@ -26,7 +25,6 @@ export default function Favorite() {
         GetFavPetList(result?.favorites);
     };
 
-    // Fetch Related Pet List
     const GetFavPetList = async (favId_) => {
         setLoader(true);
         setFavPetList([]);

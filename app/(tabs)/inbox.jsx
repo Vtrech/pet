@@ -27,19 +27,6 @@ export default function Inbox() {
         setLoader(false)
     }
 
-    // const MapOtherUserList = () => {
-    //     const list = []
-    //     userList.forEach((record) => {
-    //         const otherUser = record.users.filter((user) => user?.email != user?.primaryEmailAddress?.emailAddress)
-    //         const result = {
-    //             docId: record.id,
-    //             ...otherUser[0]
-    //         }
-    //         list.push(result)
-    //     })
-
-    //     return list;
-    // }
     const MapOtherUserList = () => {
         const list = []
         userList.forEach((record) => {
@@ -47,7 +34,7 @@ export default function Inbox() {
             if (otherUser.length > 0) {
                 const result = {
                     docId: record.id,
-                    ...otherUser[0]  // Lấy người dùng đầu tiên trong danh sách đã lọc
+                    ...otherUser[0]
                 }
                 list.push(result)
             }

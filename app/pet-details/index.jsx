@@ -11,8 +11,6 @@ import { useRouter } from 'expo-router';
 import { db } from '../../config/FirebaseConfig';
 
 
-
-
 export default function PetDetails() {
 
     const pet = useLocalSearchParams();
@@ -26,7 +24,7 @@ export default function PetDetails() {
             headerTitle: ''
         })
     }, [])
-    // used to Initiate Chat between two user
+
     const InitiateChat = async () => {
         const docId1 = user?.primaryEmailAddress?.emailAddress + '_' + pet?.email;
         const docId2 = pet?.email + '_' + user?.primaryEmailAddress?.emailAddress;
@@ -71,13 +69,9 @@ export default function PetDetails() {
         <View>
             <ScrollView>
 
-                {/* Pet Infomation  */}
                 <PetInfo pet={pet} />
-                {/* Pet Properties  */}
                 <PetSubInfo pet={pet} />
-                {/* about */}
                 <AboutPet pet={pet} />
-                {/* Owner details  */}
                 <OwnerInfo pet={pet} />
                 <View style={{ height: 70 }}>
 
@@ -85,7 +79,6 @@ export default function PetDetails() {
 
             </ScrollView>
 
-            {/* Adopt me button  */}
             <View style={styles?.bottomContainer}>
                 <TouchableOpacity
                     onPress={InitiateChat}

@@ -61,7 +61,7 @@ export default function index() {
 
   const onSubmit = () => {
     if (Object.keys(formData).length < 8) {
-      ToastAndroid.show('Enter All Details', ToastAndroid.SHORT)
+      ToastAndroid.show('Nhập đầy đủ thông tin', ToastAndroid.SHORT)
       return
     }
     UploadImage()

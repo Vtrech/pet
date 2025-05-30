@@ -11,8 +11,8 @@ Hiện nay, nhu cầu nhận nuôi thú cưng đang ngày càng tăng cao, đặ
 ## 3. Tính năng chính
 
 ### 3.1. Đăng nhập/Đăng ký tài khoản
-- Hỗ trợ xác thực qua email, Google, hoặc mạng xã hội.
-- Lưu thông tin người dùng, vai trò (người cho, người nhận).
+- Hỗ trợ xác thực qua email, Google.
+- Lưu thông tin người dùng.
 
 ### 3.2. Đăng tin cho thú cưng cần nhận nuôi
 - Cho phép người dùng đăng tải thông tin thú cưng: hình ảnh, mô tả, thông tin về vật nuôi.
